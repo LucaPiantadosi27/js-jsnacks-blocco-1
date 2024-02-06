@@ -19,7 +19,7 @@ const resultElement = document.querySelector("#result");
 
     resultElement.innerText = `${word2}" "è più corta di" "{$word1}` ;
 
- } else {
+ } else { 
 
     resultElement.innerText =   `${word1}" "ha la stessa lunghezza di" "{$word2}` ;
     
