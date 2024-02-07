@@ -3,22 +3,43 @@
 
 
 
-let sum = 0;
+let numbers = []; 
+let inputCount = 0;
+let myButtonElement = document.querySelector(".btn").addEventListener("click",
 
-for(let i = 0; i < 10; i++) {
 
-    const number = Number(prompt(`Inserisci il ${i + 1}° numero`));
 
-    // Vado a verificare  che il numero inserito non sia nullo e che sia un numero
-    if(number == null || isNaN(number)) {
 
-        alert("Non hai inserito un numero! Questo dato non verrà sommato");
+    function(){
+    let numberElement = document.getElementById("choiceNumber");
+    let inputValue = Number(numberElement.value);
+    console.log(inputValue)
 
-    } else {
+    console.log(numbers)
 
-        sum += number;
+    if(!isNaN(inputValue)){
+        numbers.push(inputValue);
+        inputCount++;
+
+        numberElement.value = "";
+
+        if (inputCount===10){
+            calculateSum();
+        }
+
+    }else{
+        console.log("inserisci un numero valido")
     }
+ } 
+ 
+)
+function calculateSum() {
+    let sum = 0;
+    
+    for (let i = 0; i < numbers.length ; i++){
+        sum += numbers[i];
 
+} console.log(sum)
+
+let result = document.querySelector("P").innerHTML = sum;
 }
-
-console.log("Il risultato è: " + sum);
