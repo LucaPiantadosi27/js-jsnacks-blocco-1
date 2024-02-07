@@ -36,7 +36,7 @@ for (let i = 0; i < 6 ; i++) {
     document.querySelector("h2").innerText = "Ecco l'elenco dei numeri dispari che hai inserito";
 
     // Stampa a schermo il contenuto dell'array
-    
+
 for(let i = 0; i < numberList.length; i++) {
     
     // creo un elemento html <li>

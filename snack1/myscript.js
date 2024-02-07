@@ -2,25 +2,23 @@
 //Il software stampa prima la parola più corta, poi la parola più lunga.
 
 
-const word1 = prompt("inserisci la prima parola");
-const word2 = prompt("inserisci la seconda parola");
-
-// console.log(word1.lenght);
-
-const resultElement = document.querySelector("#result");
-
- if(word1.length < word2.length) {
-    //parola 1 più corta
-
-    resultElement.innerText = `${word1}" "è più corta di" "{$word2}` ;
+let userQuestion1 = prompt ("Scrivi la prima parola");
+console.log(userQuestion1)
+let userQuestion2 = prompt ("Scrivi la seconda parola");
+console.log(userQuestion2)
 
 
- } else if { (word1.length > word2.length)
+let resultElement="" ;
+let resultSmall = userQuestion1.length;
+let resultBig  =  userQuestion2.length;
 
-    resultElement.innerText = `${word2}" "è più corta di" "{$word1}` ;
 
- } else { 
+    if(resultSmall < resultBig){
+        
+    resultElement=`La parola più corta é: <br> ${userQuestion1} <br> la parola più lunga é: ${userQuestion2}`;
+        
+    }else if(resultBig < resultSmall){
+        resultElement=`La parola più corta é: <br> ${userQuestion2} <br> la parola più lunga é: ${userQuestion1}`;
+    }
 
-    resultElement.innerText =   `${word1}" "ha la stessa lunghezza di" "{$word2}` ;
-    
- }
+    document.getElementById("result").innerHTML = resultElement;
