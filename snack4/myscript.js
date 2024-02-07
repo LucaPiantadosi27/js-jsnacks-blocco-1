@@ -2,24 +2,29 @@
 //e calcola la somma di tutte le cifre che compongono il numero.
 
 
-const number = prompt("Inserisci un numero");
+
+let myButton = document.querySelector(".btn").addEventListener("click",
+    function () {
+        let inputElement = document.getElementById("userChoice");
+        let inputValue = inputElement.value;
+
+        if (!isNaN(inputValue) && inputValue.length === 4) {
+            let sum = 0;
+
+            for (let i = 0; i < inputValue.length; i++) {
+                sum += +inputValue[i];
+
+            }
+
+            let resultElement = document.querySelector("p");
 
 
-if(number.length != 4 || isNaN(number)) {
-    //  errore
-    alert("Non è un numero di 4 cifre");
-} else {
+            resultElement.innerHTML = "";
 
-    // inizializzata  la somma
-    let sum = 0;
+            resultElement.innerHTML = "La somma delle cifre è: " + sum;
 
-    for(let i = 0; i < number.length; i++) {
-
-        sum += Number(number[i]);
-
+        } else {
+            alert("Inserisci un numero di 4 cifre valido.");
+        }
     }
-
-    console.log("La somma delle cifre che compongono il numero che hai inserito è " + sum);
-
-
-}
+);
